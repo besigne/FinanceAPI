@@ -9,12 +9,14 @@ class User(AbstractUser):
     fixed_income = models.DecimalField(
         max_digits=9,
         decimal_places=2,
-        validators=[MinValueValidator(0), MaxValueValidator(1000000)]
+        validators=[MinValueValidator(0), MaxValueValidator(1000000)],
+        null=True
     )
     fixed_spending = models.DecimalField(
         max_digits=9,
         decimal_places=2,
-        validators=[MinValueValidator(0), MaxValueValidator(1000000)]
+        validators=[MinValueValidator(0), MaxValueValidator(1000000)],
+        null=True
     )
 
     class Meta:
